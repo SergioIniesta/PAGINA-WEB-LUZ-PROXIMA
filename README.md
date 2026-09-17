@@ -21,11 +21,17 @@ Valida nombre, apellidos, teléfono, correo y descripción. Prepara un enlace de
 
 Repositorio: https://github.com/SergioIniesta/PAGINA-WEB-LUZ-PROXIMA. El proyecto local utiliza este repositorio como remoto `origin`. Subir el código no publica automáticamente la web en Internet.
 
+## Enlace de revisión en GitHub Pages
+
+Enlace para el cliente: https://sergioiniesta.github.io/PAGINA-WEB-LUZ-PROXIMA/
+
+El usuario ha autorizado hacer público el repositorio y publicar una vista de revisión en GitHub Pages tras los fallos de conexión a Cloudflare. El flujo `.github/workflows/pages.yml` publica la carpeta `dist` automáticamente con cada actualización de `main`.
+
 ## Publicación en Cloudflare Pages
 
 Web pública: https://luz-proxima.pages.dev/
 
-Proveedor: Cloudflare Pages, plan gratuito, manteniendo el repositorio privado. Proyecto `luz-proxima` conectado a GitHub y primera publicación completada.
+Cloudflare Pages, plan gratuito. Proyecto `luz-proxima` conectado a GitHub y publicación completada, aunque las comprobaciones de acceso dieron tiempos de espera. Se conserva como alojamiento alternativo. El repositorio se hace público para utilizar GitHub Pages por petición del usuario.
 
 Configuración para la integración con GitHub:
 
