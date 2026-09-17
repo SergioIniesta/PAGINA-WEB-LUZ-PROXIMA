@@ -23,7 +23,9 @@ Repositorio: https://github.com/SergioIniesta/PAGINA-WEB-LUZ-PROXIMA. El proyect
 
 ## Publicación en Cloudflare Pages
 
-Proveedor elegido: Cloudflare Pages, plan gratuito, manteniendo el repositorio privado. Pendiente de conectar la cuenta y crear el proyecto en Cloudflare.
+Web pública: https://luz-proxima.pages.dev/
+
+Proveedor: Cloudflare Pages, plan gratuito, manteniendo el repositorio privado. Proyecto `luz-proxima` conectado a GitHub y primera publicación completada.
 
 Configuración para la integración con GitHub:
 
@@ -35,7 +37,7 @@ Configuración para la integración con GitHub:
 - Directorio raíz: raíz del repositorio.
 - Sin variables de entorno, funciones, bases de datos ni servicios de pago.
 
-Una vez conectada la integración, los cambios subidos a `main` se publicarán en el mismo enlace `pages.dev`. Las ramas de revisión pueden generar vistas previas para recibir el OK del cliente antes de incorporarlas a `main`. El enlace público se añadirá aquí cuando se haya creado y verificado.
+Los cambios subidos a `main` se publican automáticamente en https://luz-proxima.pages.dev/. Las ramas de revisión pueden generar vistas previas para recibir el OK del cliente antes de incorporarlas a `main`.
 
 Guía oficial: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
 
