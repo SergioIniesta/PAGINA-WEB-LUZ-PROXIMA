@@ -19,33 +19,13 @@ Valida nombre, apellidos, teléfono, correo y descripción. Prepara un enlace de
 
 ## GitHub
 
-Repositorio: https://github.com/SergioIniesta/PAGINA-WEB-LUZ-PROXIMA. El proyecto local utiliza este repositorio como remoto `origin`. Subir el código no publica automáticamente la web en Internet.
+Repositorio: https://github.com/SergioIniesta/PAGINA-WEB-LUZ-PROXIMA. El proyecto local utiliza este repositorio como remoto `origin`.
 
 ## Enlace de revisión en GitHub Pages
 
 Enlace para el cliente: https://sergioiniesta.github.io/PAGINA-WEB-LUZ-PROXIMA/
 
-El usuario ha autorizado hacer público el repositorio y publicar una vista de revisión en GitHub Pages tras los fallos de conexión a Cloudflare. El flujo `.github/workflows/pages.yml` publica la carpeta `dist` automáticamente con cada actualización de `main`.
-
-## Publicación en Cloudflare Pages
-
-Web pública: https://luz-proxima.pages.dev/
-
-Cloudflare Pages, plan gratuito. Proyecto `luz-proxima` conectado a GitHub y publicación completada, aunque las comprobaciones de acceso dieron tiempos de espera. Se conserva como alojamiento alternativo. El repositorio se hace público para utilizar GitHub Pages por petición del usuario.
-
-Configuración para la integración con GitHub:
-
-- Repositorio: `SergioIniesta/PAGINA-WEB-LUZ-PROXIMA`.
-- Rama de producción: `main`.
-- Framework: `None`.
-- Comando de compilación: `node --check dist/app.js`.
-- Directorio de salida: `dist`.
-- Directorio raíz: raíz del repositorio.
-- Sin variables de entorno, funciones, bases de datos ni servicios de pago.
-
-Los cambios subidos a `main` se publican automáticamente en https://luz-proxima.pages.dev/. Las ramas de revisión pueden generar vistas previas para recibir el OK del cliente antes de incorporarlas a `main`.
-
-Guía oficial: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
+El repositorio es público. El flujo `.github/workflows/pages.yml` publica la carpeta `dist` automáticamente en GitHub Pages con cada actualización de `main`.
 
 ## Antes de publicación comercial
 
