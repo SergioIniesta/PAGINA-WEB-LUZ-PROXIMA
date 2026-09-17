@@ -21,6 +21,24 @@ Valida nombre, apellidos, teléfono, correo y descripción. Prepara un enlace de
 
 Repositorio: https://github.com/SergioIniesta/PAGINA-WEB-LUZ-PROXIMA. El proyecto local utiliza este repositorio como remoto `origin`. Subir el código no publica automáticamente la web en Internet.
 
+## Publicación en Cloudflare Pages
+
+Proveedor elegido: Cloudflare Pages, plan gratuito, manteniendo el repositorio privado. Pendiente de conectar la cuenta y crear el proyecto en Cloudflare.
+
+Configuración para la integración con GitHub:
+
+- Repositorio: `SergioIniesta/PAGINA-WEB-LUZ-PROXIMA`.
+- Rama de producción: `main`.
+- Framework: `None`.
+- Comando de compilación: `node --check dist/app.js`.
+- Directorio de salida: `dist`.
+- Directorio raíz: raíz del repositorio.
+- Sin variables de entorno, funciones, bases de datos ni servicios de pago.
+
+Una vez conectada la integración, los cambios subidos a `main` se publicarán en el mismo enlace `pages.dev`. Las ramas de revisión pueden generar vistas previas para recibir el OK del cliente antes de incorporarlas a `main`. El enlace público se añadirá aquí cuando se haya creado y verificado.
+
+Guía oficial: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
+
 ## Antes de publicación comercial
 
 Confirmar información de la empresa y aportar los datos del titular y el texto de privacidad que corresponda a la operativa real. La tipografía utiliza Google Fonts con alternativa local del sistema. No se han añadido analítica ni cookies propias.
