@@ -29,4 +29,6 @@ El repositorio es público. El flujo `.github/workflows/pages.yml` publica la ca
 
 ## Antes de publicación comercial
 
-Confirmar información de la empresa y aportar los datos del titular y el texto de privacidad que corresponda a la operativa real. La tipografía utiliza Google Fonts con alternativa local del sistema. No se han añadido analítica ni cookies propias.
+Confirmar información de la empresa y aportar los datos del titular y el texto de privacidad que corresponda a la operativa real. Las tipografías se sirven desde la propia web y sus licencias están en `dist/assets/fonts`. No se han añadido analítica ni cookies propias. La política de seguridad bloquea envíos HTML convencionales y conexiones de scripts a servicios externos; deberá revisarse al conectar un servicio de recepción.
+
+Los archivos con datos de clientes no deben guardarse en `dist` ni en el repositorio público. Las extensiones habituales de hojas de cálculo y bases de datos están excluidas de Git como protección adicional; esto no sustituye permisos, copias de seguridad ni cifrado. La carpeta de este proyecto está dentro de OneDrive: no debe utilizarse como ubicación de una base de datos que se pretenda exclusivamente local.

@@ -5,3 +5,14 @@ node_modules/
 .sites-runtime/
 artifacts/
 *.log
+# Datos de clientes y exportaciones: nunca publicar en el repositorio.
+private/
+data/
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.sqlite
+*.sqlite3
+*.db
+*.bak
