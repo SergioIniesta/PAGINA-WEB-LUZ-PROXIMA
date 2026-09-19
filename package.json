@@ -1,1 +1,1 @@
-{"name":"luz-proxima","version":"1.0.0","private":true,"description":"Web corporativa de Luz Próxima","scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check dist/app.js && node --check server.mjs"}}
+{"name":"luz-proxima","version":"1.0.0","private":true,"description":"Web corporativa de Luz Próxima","scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check dist/languages.js && node --check dist/app.js && node --check server.mjs"}}

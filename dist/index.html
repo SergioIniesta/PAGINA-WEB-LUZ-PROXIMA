@@ -7,8 +7,9 @@
   <meta name="theme-color" content="#ffdb17">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=3">
-  <script src="app.js" defer></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=4">
+  <script src="languages.js?v=1" defer></script>
+  <script src="app.js?v=4" defer></script>
 </head>
 <body>
   <a class="skip" href="#conocenos">Saltar al contenido</a>
@@ -16,6 +17,7 @@
     <a class="brand" href="#inicio" aria-label="Luz Próxima, inicio"><span class="brand-bulb" aria-hidden="true"></span><span>LUZ <b>PRÓXIMA</b><small>ASESORES ENERGÉTICOS</small></span></a>
     <nav aria-label="Navegación principal"><a href="#conocenos">Conócenos</a><a href="#contactanos">Contáctanos</a><a href="#comerciales">Comerciales <span class="nav-dot"></span></a></nav>
     <a class="header-phone" href="tel:+34661114453">↗ <span>661 114 453</span></a>
+    <div class="language-picker" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><select id="language" aria-label="Idioma"><option value="es" lang="es">Español</option><option value="en" lang="en">English</option></select></div>
   </header>
   <main id="inicio">
     <section class="hero" aria-labelledby="hero-title">
