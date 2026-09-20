@@ -1,0 +1,6 @@
+#!/bin/sh
+# Every local commit gets a versioned, verified backup outside this repository.
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/backup.ps1 || {
+  echo 'ERROR: No se pudo crear la copia. Ejecuta scripts/backup.ps1 antes de publicar.' >&2
+  exit 1
+}

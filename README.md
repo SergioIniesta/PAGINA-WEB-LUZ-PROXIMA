@@ -2,6 +2,14 @@
 
 Primera versión de la web corporativa, adaptable a móviles, sin dependencias de compilación.
 
+## Copias locales de cada actualización
+
+`scripts/backup.ps1` crea un ZIP completo del código y recursos, numerado V1.0, V1.1, V1.2… con fecha y hora local. Se guarda en la carpeta Documentos de Windows, dentro de `Copias de seguridad página web luz próxima`. Incluye un manifiesto con versión, fecha, commit y huellas SHA-256; el script comprueba el contenido del ZIP antes de darlo por válido. No sobrescribe versiones anteriores.
+
+En este ordenador el hook `scripts/git-hooks/post-commit` ejecuta la copia después de cada commit. Para una modificación sin commit: `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/backup.ps1`. Al clonar en otro equipo se debe activar con `git config core.hooksPath scripts/git-hooks`.
+
+Para restaurar, extraer el ZIP en una carpeta nueva y revisar la web allí antes de sustituir el proyecto. Las copias no contienen historial Git, datos de clientes, credenciales ni la configuración de cuentas externas. Son locales: no protegen frente a una avería del disco que las contiene.
+
 ## Ver la web
 
 Abre esta carpeta en Visual Studio Code y pulsa F5 (configuración «Ver Luz Próxima»), o ejecuta `node server.mjs`. La dirección local es http://127.0.0.1:4173.
