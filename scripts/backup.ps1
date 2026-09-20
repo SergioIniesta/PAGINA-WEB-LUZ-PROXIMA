@@ -1,6 +1,12 @@
 ﻿param([string]$Destination)
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+function Get-BackupHash([string]$FilePath) {
+    $inputStream = [IO.File]::OpenRead($FilePath)
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    try { return [BitConverter]::ToString($algorithm.ComputeHash($inputStream)).Replace('-','') }
+    finally { $algorithm.Dispose(); $inputStream.Dispose() }
+}
 if (-not $Destination) {
     $Destination = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'Copias de seguridad página web luz próxima'
 }
@@ -42,8 +48,8 @@ try {
         $target = Join-Path $stage $relative
         [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($target)) | Out-Null
         Copy-Item -LiteralPath $source -Destination $target
-        $hash = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash
-        if ($hash -ne (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash) { throw 'Un archivo cambió durante la copia. Reintenta.' }
+        $hash = Get-BackupHash $target
+        if ($hash -ne (Get-BackupHash $source)) { throw 'Un archivo cambió durante la copia. Reintenta.' }
         $records += [ordered]@{ path=$relative.Replace('\','/'); sha256=$hash }
     }
     if (-not ($records.path -contains 'dist/index.html')) { throw 'Falta la página principal en la copia.' }
