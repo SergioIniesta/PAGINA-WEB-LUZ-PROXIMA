@@ -1,9 +1,20 @@
 const links = [...document.querySelectorAll('nav a')];
 function markActive(id) { for (const link of links) { const active = link.hash === `#${id}`; link.classList.toggle('active', active); if(active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); } }
 const observer = new IntersectionObserver(entries => { for(const entry of entries) if(entry.isIntersecting) markActive(entry.target.id); }, {rootMargin: '-20% 0px -45% 0px', threshold: 0});
-document.querySelectorAll('main>section[id]').forEach(section => observer.observe(section));
+document.querySelectorAll('main>section[id], #servicios').forEach(section => observer.observe(section));
 links.forEach(link => link.addEventListener('click', () => markActive(link.hash.slice(1))));
-document.querySelectorAll('[data-interest]').forEach(link => link.addEventListener('click', () => { const field = document.querySelector('[name="descripcion"]'); if (!field.value.trim()) field.value = link.dataset.interest; invalidateQuery(); }));
+let suggestedInterest = '';
+document.querySelectorAll('[data-interest]').forEach(link => link.addEventListener('click', () => {
+  const field = document.querySelector('[name="descripcion"]');
+  // Replace only our own suggestion; never overwrite the visitor's wording.
+  if (!field.value.trim() || field.value === suggestedInterest) {
+    field.value = link.dataset.interest;
+    suggestedInterest = field.value;
+    field.setCustomValidity('');
+  }
+  invalidateQuery();
+  if (link.tagName === 'BUTTON') field.focus();
+}));
 const form = document.querySelector('#contact-form');
 const status = document.querySelector('#form-status');
 const send = document.querySelector('#send-query');
@@ -19,6 +30,7 @@ function validateField(field) {
   if (validity.valueMissing) error = isEnglish() ? 'Please complete this field.' : 'Completa este campo.';
   else if (validity.typeMismatch) error = isEnglish() ? 'Please enter a valid email address.' : 'Introduce un correo electrónico válido.';
   else if (validity.patternMismatch) error = isEnglish() ? 'Enter a valid phone number with at least 9 digits.' : 'Introduce un teléfono válido con al menos 9 dígitos.';
+  else if (field.name === 'telefono' && field.value.replace(/\D/g, '').length < 9) error = isEnglish() ? 'Enter a valid phone number with at least 9 digits.' : 'Introduce un teléfono válido con al menos 9 dígitos.';
   else if (field.minLength > 0 && field.value && field.value.length < field.minLength) error = isEnglish() ? `Please enter at least ${field.minLength} characters.` : `Escribe al menos ${field.minLength} caracteres.`;
   field.setCustomValidity(error);
 }

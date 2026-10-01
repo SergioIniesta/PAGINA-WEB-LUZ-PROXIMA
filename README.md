@@ -2,6 +2,12 @@
 
 Primera versión de la web corporativa, adaptable a móviles, sin dependencias de compilación.
 
+## Actualización de contenido y experiencia · octubre de 2026
+
+El estudio de ocho referencias del sector, sus fuentes y las decisiones aplicadas están en `docs/ESTUDIO-COMPETENCIA-2026-10-01.md`. Se mantienen los colores, fuentes, logotipo y portada, y se añaden perfiles de cliente, proceso de asesoramiento, explicación de factura, preguntas frecuentes y contacto comercial. Todos los textos nuevos están traducidos al inglés.
+
+`scripts/check-site.cjs` verifica la vista local en cinco anchuras y dos idiomas, sugerencias, validación, preguntas y preparación de WhatsApp sin enviar mensajes. Requiere Playwright disponible; `PLAYWRIGHT_PATH` permite indicar su instalación y `CHROME_PATH` un ejecutable de Chrome. Ejecutar con la vista local iniciada. Los resultados y capturas se guardan en `artifacts/`, fuera del repositorio y de las copias de código.
+
 ## Copias locales de cada actualización
 
 `scripts/backup.ps1` crea un ZIP completo del código y recursos, numerado V1.0, V1.1, V1.2… con fecha y hora local. Se guarda en la carpeta Documentos de Windows, dentro de `Copias de seguridad página web luz próxima`. Incluye un manifiesto con versión, fecha, commit y huellas SHA-256; el script comprueba el contenido del ZIP antes de darlo por válido. No sobrescribe versiones anteriores.
